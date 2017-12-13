@@ -7,9 +7,9 @@ build:
   commands:
     - echo Build started on `date`
     - echo Building the Docker image...
-    - docker build -t $NAME .
+    - docker build -t $NAME:latest .
 post_build:
   commands:
     - echo Build completed on `date`
     - echo Pushing the Docker image...
-    - docker push $NAME
+    - docker push $NAME:latest
