@@ -12,7 +12,7 @@ def main_loop(read_f, action_f, save_f, path):
         save_f(res_img)
     
 def read_img_from_fs(dir_path, file_name):
-    picture = io.imread(dir_path + file_name, True)
+    picture = io.imread(dir_path +'/' + file_name, True)
     return picture
 
 def perform_picture_modification(picture):
