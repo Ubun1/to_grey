@@ -1,15 +1,17 @@
 version: 0.2
-pre_build:
-  commands:
-    - echo Logging in to Docker Hub...
-    - docker login -p $PASS -u $USR         
-build:
-  commands:
-    - echo Build started on `date`
-    - echo Building the Docker image...
-    - docker build -t $NAME:latest .
-post_build:
-  commands:
-    - echo Build completed on `date`
-    - echo Pushing the Docker image...
-    - docker push $NAME:latest
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Docker Hub...
+      - docker login -p $PASS -u $USR     
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t $NAME:latest .
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push $NAME:latest
