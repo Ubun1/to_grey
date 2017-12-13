@@ -30,4 +30,5 @@ read_f = lambda file_name: read_img_from_fs(os.environ['WDIR'], file_name)
 save_f = lambda file_name: upload_to_s3(os.environ['BUCKET'], file_name)
 action_f = lambda picture: perform_picture_modification(picture)
 
-main_loop(read_f, action_f, save_f, os.environ['WDIR'])
+if __name__ == '__main__':
+    main_loop(read_f, action_f, save_f, os.environ['WDIR'])
