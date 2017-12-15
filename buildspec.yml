@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Docker Hub...
-      - docker login -p $PASS -u $USR     
+      - docker login -p $PASS -u $USR    
   build:
     commands:
       - echo Build started on `date`

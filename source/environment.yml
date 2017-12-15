@@ -1,0 +1,4 @@
+name: to_grey
+dependencies:
+  - scikit-image
+  
